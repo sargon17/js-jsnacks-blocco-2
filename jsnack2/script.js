@@ -2,13 +2,32 @@
 
 // First version (for)
 
+// let sum = 0;
+
+// for (let index = 0; index < 5; index++) {
+//   const number = parseInt(prompt(`Input the ${index + 1} number: `));
+//   if (isNaN(number)) {
+//     index--;
+//   }
+//   sum += number;
+// }
+// console.log(sum);
+
+// Second version (while)
+
+let isNumbersValid = false;
+let i = 0;
 let sum = 0;
 
-for (let index = 0; index < 5; index++) {
-  const number = parseInt(prompt(`Input the ${index + 1} number: `));
-  if (isNaN(number)) {
-    index--;
+while (!isNumbersValid) {
+  const number = parseInt(prompt(`Input the ${i + 1} number: `));
+
+  if (!isNaN(number)) {
+    i++;
+    sum += number;
   }
-  sum += number;
+  if (i === 5) {
+    isNumbersValid = true;
+  }
 }
 console.log(sum);
